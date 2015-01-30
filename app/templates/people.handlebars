@@ -1,0 +1,6 @@
+{{#each person in controller}}
+  <div>{{#link-to "people.person" person.id}}details{{/link-to}}</div>
+  <div class="name">{{person.fullName}}</div>
+{{/each}}
+
+{{outlet}}

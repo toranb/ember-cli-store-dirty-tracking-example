@@ -1,0 +1,9 @@
+<h3>Person Id{{model.id}}</h3>
+<div><b>firstName:</b> {{input value=model.firstName}}</div>
+<div><b>lastName:</b> {{input value=model.lastName}}</div>
+<div><b>{{model.fullName}}</b></div>
+
+<div><b>wat:</b> {{input type="text" value=model.wat}}</div>
+<p class="input-error">{{model.watError}}</p>
+
+<button {{action "save"}}>Save</button>
