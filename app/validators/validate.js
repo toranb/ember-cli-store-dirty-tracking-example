@@ -5,7 +5,7 @@ var validate = function(field, options) {
             return options.test(value);
         }
         return value.trim().length > 0;
-    }.property(field)
+    }.property(field);
 };
 
 export default validate;
