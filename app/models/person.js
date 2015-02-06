@@ -2,6 +2,12 @@ import { attr, Model } from "ember-cli-simple-store/model";
 
 var Person = Model.extend({
     firstName: attr(),
+    firstNameIsDirty: function() {
+        return this.get("firstName:isDirty");
+    }.property("firstName"),
+    lastNameIsDirty: function() {
+        return this.get("lastName:isDirty");
+    }.property("lastName"),
     lastName: attr(),
     wat: attr(),
     watError: function() {
