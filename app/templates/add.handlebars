@@ -1,11 +1,17 @@
 <h3>Add a new model</h3><br />
 
+<div>
 {{input value=model.firstName placeholder="first name"}}
 {{#form-field className="red" field="firstName" model=model validation=firstNameValidation}}Invalid first name{{/form-field}}
+</div><br />
 
+<div>
 {{input value=model.lastName placeholder="last name"}}
 {{#form-field className="blue" field="lastName" model=model validation=lastNameValidation}}Invalid last name{{/form-field}}
+</div><br />
 
+<div>
 <b>{{model.fullName}}</b>
+</div><br />
 
 <button {{action "save"}}>Save</button>
