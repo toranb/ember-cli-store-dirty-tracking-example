@@ -6,11 +6,11 @@ var Person = Model.extend({
     wat: attr(),
     watError: function() {
         var wat = this.get("wat");
-        var isDirty = this.get("wat:isDirty");
+        var isDirty = this.get("watIsDirty");
         if(!wat && isDirty) {
             return "please enter a valid wat";
         }
-    }.property("wat"),
+    }.property("_dirty", "wat"),
     fullName: function() {
         var first = this.get("firstName");
         var last = this.get("lastName");
