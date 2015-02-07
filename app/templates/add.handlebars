@@ -2,12 +2,17 @@
 
 <div>
 {{input value=model.firstName placeholder="first name"}}
-{{#form-field className="red" field="firstName" model=model validation=firstNameValidation}}Invalid first name{{/form-field}}
+{{#validation-error-field submitted=submitted className="red" field="firstName" model=model validation=firstNameValidation}}Invalid first name{{/validation-error-field}}
 </div><br />
 
 <div>
 {{input value=model.lastName placeholder="last name"}}
-{{#form-field className="blue" field="lastName" model=model validation=lastNameValidation}}Invalid last name{{/form-field}}
+{{#validation-error-field submitted=submitted className="blue" field="lastName" model=model validation=lastNameValidation}}Invalid last name{{/validation-error-field}}
+</div><br />
+
+<div>
+{{input value=model.wat placeholder="wat"}}
+{{#validation-error-field delayed=true submitted=submitted field="wat" model=model validation=watValidation}}Invalid wat{{/validation-error-field}}
 </div><br />
 
 <div>
