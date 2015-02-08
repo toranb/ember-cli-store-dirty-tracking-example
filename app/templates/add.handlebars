@@ -1,8 +1,18 @@
 <h3>Add a new model</h3><br />
 
-{{input value=model.firstName placeholder="first name"}}
-{{input value=model.lastName placeholder="last name"}}
+<div>
+  {{input value=model.firstName placeholder="first name"}}
+  {{#validation-error-field submitted=submitted className="red" field="firstName" model=model validation=firstNameValidation}}invalid first name{{/validation-error-field}}
+</div><br />
 
-<b>{{model.fullName}}</b>
+<div>
+  {{input value=model.lastName placeholder="last name"}}
+  {{#validation-error-field submitted=submitted className="blue" field="lastName" model=model validation=lastNameValidation}}invalid last name{{/validation-error-field}}
+</div><br />
+
+<div>
+  {{input value=model.email placeholder="email"}}
+  {{#validation-error-field delayed=true submitted=submitted field="email" model=model validation=emailValidation}}invalid email{{/validation-error-field}}
+</div><br />
 
 <button {{action "save"}}>Save</button>

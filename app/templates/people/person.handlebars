@@ -1,9 +1,20 @@
 <h3>Person Id{{model.id}}</h3>
-<div><b>firstName:</b> {{input value=model.firstName}}</div>
-<div><b>lastName:</b> {{input value=model.lastName}}</div>
-<div><b>{{model.fullName}}</b></div>
 
-<div><b>wat:</b> {{input type="text" value=model.wat}}</div>
-<p class="input-error">{{model.watError}}</p>
+<div>
+  <b>firstName:</b> {{input value=model.firstName}}
+  {{#validation-error-field submitted=submitted className="red" field="firstName" model=model validation=firstNameValidation}}invalid first name{{/validation-error-field}}
+</div><br />
+
+<div>
+  <b>lastName:</b> {{input value=model.lastName}}
+  {{#validation-error-field submitted=submitted className="blue" field="lastName" model=model validation=lastNameValidation}}invalid last name{{/validation-error-field}}
+</div><br />
+
+<div>
+  <b>email:</b> {{input type="text" value=model.email}}
+  {{#validation-error-field delayed=true submitted=submitted field="email" model=model validation=emailValidation}}invalid email{{/validation-error-field}}
+</div><br />
+
+<div><b>{{model.fullName}}</b></div><br />
 
 <button {{action "save"}}>Save</button>

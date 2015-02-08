@@ -18,7 +18,7 @@ var PersonRepository = Ember.Object.extend({
             id: nextId,
             firstName: model.get("firstName"),
             lastName: model.get("lastName"),
-            wat: model.get("wat")
+            email: model.get("email")
         };
         //in prod you would xhr here before pushing
         var store = this.get("store");
