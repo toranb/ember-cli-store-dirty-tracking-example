@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 var PeoplePersonRoute = Ember.Route.extend({
+    setupController: function(controller, model) {
+        this._super(controller, model);
+        controller.set('submitted', undefined);
+    },
     actions: {
         willTransition: function(transition) {
             var model = this.controller.get('model');
