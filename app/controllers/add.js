@@ -7,6 +7,17 @@ var AddController = Ember.Controller.extend(ValidationMixin, {
     lastNameValidation: validate("model.lastName", /\d{5}/),
     emailValidation: validate("model.email", /\S+@\S+\.\S+/),
     actions: {
+        wat: function(callback) {
+            var promise = new Ember.RSVP.Promise(function(resolve, reject) {
+                Ember.run.later(function() {
+                    resolve();
+                }, 3000);
+            });
+            callback(promise);
+            promise.then(function() {
+                console.log("WAT!");
+            });
+        },
         save: function() {
             this.set("submitted", true);
             if(this.get("valid")) {
