@@ -2,6 +2,7 @@ import Ember from "ember";
 import {ValidationMixin, validate} from "ember-cli-simple-validation/mixins/validate";
 
 var PeoplePersonController = Ember.Controller.extend(ValidationMixin, {
+    repository: Ember.inject.repositories('person'),
     firstNameValidation: validate("model.firstName"),
     lastNameValidation: validate("model.lastName", /\d{5}/),
     emailValidation: validate("model.email", /\S+@\S+\.\S+/),

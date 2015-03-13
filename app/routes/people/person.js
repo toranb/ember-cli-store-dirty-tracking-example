@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 var PeoplePersonRoute = Ember.Route.extend({
+    repository: Ember.inject.repositories('person'),
     setupController: function(controller, model) {
         this._super(controller, model);
         controller.set('submitted', undefined);
