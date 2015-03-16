@@ -34,6 +34,7 @@
     "glob": "^4.0.5",
     "ember-cli-simple-store": "0.6.1",
     "ember-cli-simple-validation": "0.1.2",
-    "ember-promise": "^0.2.0"
+    "ember-promise": "^0.2.0",
+    "ember-cli-auto-register": "^0.1.0"
   }
 }
