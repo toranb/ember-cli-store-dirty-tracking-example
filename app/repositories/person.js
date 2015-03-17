@@ -30,15 +30,12 @@ var PersonRepository = Ember.Object.extend({
     find: function() {
         var store = this.get("store");
         var all = store.find("person");
-        //only doing this to prevent a reload of this static/xhr
-        if (all.length < 1) {
-            return PromiseMixin.xhr("/api/people", "GET").then(function(response) {
-                response.forEach(function(data) {
-                    store.push("person", data);
-                });
-                return store.find("person");
+        PromiseMixin.xhr("/api/people", "GET").then(function(response) {
+            response.forEach(function(data) {
+                store.push("person", data);
             });
-        }
+            all.set('isLoaded', true);
+        });
         return all;
     }
 });

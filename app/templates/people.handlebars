@@ -1,6 +1,13 @@
-{{#each person in controller}}
-  <div class="details_link">{{#link-to "people.person" person.id}}details{{/link-to}}</div>
-  <div class="name">{{person.fullName}}</div>
-{{/each}}
+
+{{#if controller.content.isLoaded}}
+  {{#if controller.content}}
+    {{#each person in controller}}
+      <div class="details_link">{{#link-to "people.person" person.id}}details{{/link-to}}</div>
+      <div class="name">{{person.fullName}}</div>
+    {{/each}}
+  {{else}}
+    <div style="text-align: center;"><h2>No data available</h2></div>
+  {{/if}}
+{{/if}}
 
 {{outlet}}
