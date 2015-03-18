@@ -4,7 +4,7 @@ var PeopleRoute = Ember.Route.extend({
     repository: Ember.inject.repositories('person'),
     model: function() {
         var repository = this.get('repository');
-        console.log(repository);
+        console.log(JSON.stringify(repository));
         //the console.log shows a class the first time
         //and something with isDestroying: true and isDestroyed: true
         return repository.find();
