@@ -1,11 +1,14 @@
 import Ember from "ember";
-import registerWithContainer from "ember-cli-auto-register/register";
+import PersonRepository from "example/repositories/person";
 
 export function initialize(container, application) {
-    registerWithContainer("repositories", application);
+    application.register("repositories:person", PersonRepository);
     application.inject("repositories", "store", "store:main");
     Ember.inject.repositories = function(name) {
-        return container.lookup("repositories:" + name);
+         return function(propertyName) {
+             var objectName = name || propertyName;
+             return container.lookup("repositories:" + objectName);
+         }.property();
     };
 }
 
