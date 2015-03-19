@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import inject from 'example/utilities/inject';
 
 var PeopleRoute = Ember.Route.extend({
-    repository: Ember.inject.repositories('person'),
+    repository: inject('person'),
     model: function() {
         var repository = this.get('repository');
         return repository.find();
