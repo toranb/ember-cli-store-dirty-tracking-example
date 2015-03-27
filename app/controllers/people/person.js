@@ -11,7 +11,7 @@ var PeoplePersonController = Ember.Controller.extend(ValidationMixin, {
         save: function() {
             this.set("submitted", true);
             if(this.get("valid")) {
-                var model = this.get("model.content");
+                var model = this.get("model");
                 var repository = this.get("repository");
                 repository.save(model);
             }
